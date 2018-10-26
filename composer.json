@@ -1,0 +1,14 @@
+{
+    "name": "aidias/gelb-base",
+    "description": "GelbFramework Plataform blueprint application.",
+    "type": "library",
+    "license": "GNU",
+    "authors": [
+        {
+            "name": "Rafael Casachi",
+            "email": "rcasachi@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
