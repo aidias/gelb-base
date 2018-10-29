@@ -2,7 +2,7 @@
     "name": "aidias/gelb-base",
     "description": "GelbFramework Plataform blueprint application.",
     "type": "library",
-    "license": "GNU",
+    "license": "MIT",
     "authors": [
         {
             "name": "Rafael Casachi",
