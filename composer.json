@@ -1,19 +1,20 @@
 {
     "name": "aidias/gelb-base",
     "description": "GelbFramework Plataform blueprint application.",
+    "keywords": ["gelb", "gelb-base", "framework", "platform", "laravel"],
     "type": "package",
     "version": "master",
     "license": "MIT",
     "authors": [
         {
             "name": "Rafael Casachi",
+            "homepage": "https://www.rafaelcasachi.eti.br",
             "email": "rcasachi@gmail.com"
         }
     ],
     "minimum-stability": "dev",
     "require": {
-      "php": "^7.1.3",
-      "laravel": "^5.7"
+      "php": "^7.1.3"
     },
     "auto-load": {
       "psr-4": {
@@ -22,6 +23,9 @@
     },
     "extra": {
       "laravel": {
+          "branch-alias": {
+              "dev-master": "1.0-dev"
+          },
           "providers": [
               "Aidias\\GelbBase\\GelbBaseServiceProvider"
           ]
