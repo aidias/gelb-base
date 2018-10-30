@@ -40,9 +40,12 @@ class Install extends Command
       $this->generateGelbInfo();
 
       if ($this->confirm('Do you wish to continue?')) {
-        $this->info('GelbFramework Platform');
+
+        $this->installDependencies();
+
       }else{
-        $this->error('GelbFramework Platform');
+        $this->error('GelbFramework Platform were not installed.');
+        $this->line('If you wish to install it, type: php artisan gelb:install');
       }
     }
 
@@ -58,5 +61,19 @@ class Install extends Command
           ['file'=>'arquivo1.php', 'address'=>'./app/app/app']
         ]
       );
+    }
+
+    public function installDependencies(){
+      $this->line('Installing dependencies...');
+
+      $codeKeyGenerate = Artisan::call('key:generate');
+      $this->info($codeKeyGenerate);
+
+      // $codeKeyGenerate = Artisan::call('key:generate');
+      // $this->info($codeKeyGenerate);
+
+      // $exitCode = Artisan::call('email:send', [
+      //   'user' => 1, '--queue' => 'default'
+      // ]);
     }
 }
