@@ -16,7 +16,7 @@
     },
     "auto-load": {
       "psr-4": {
-        "Aidias\\GelbBase": "src/"
+        "Aidias\\GelbBase\\": "src/"
       }
     },
     "extra": {
