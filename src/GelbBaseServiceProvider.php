@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Aidias\GelbBase;
 
 use Illuminate\Support\ServiceProvider;
 
