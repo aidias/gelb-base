@@ -3,6 +3,7 @@
 namespace Aidias\GelbBase\Console\Commands;
 
 use Illuminate\Console\Command;
+use Artisan;
 
 class Install extends Command
 {
