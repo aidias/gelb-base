@@ -1,7 +1,8 @@
 {
     "name": "aidias/gelb-base",
     "description": "GelbFramework Plataform blueprint application.",
-    "type": "library",
+    "type": "package",
+    "version": "master",
     "license": "MIT",
     "authors": [
         {
