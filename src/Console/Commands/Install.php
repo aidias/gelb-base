@@ -67,8 +67,9 @@ class Install extends Command
     public function installDependencies(){
       $this->line('Installing dependencies...');
 
-      $codeKeyGenerate = Artisan::call('key:generate');
-      $this->info($codeKeyGenerate);
+      Artisan::call('key:generate');
+
+      Artisan::call('make:auth');
 
       // $codeKeyGenerate = Artisan::call('key:generate');
       // $this->info($codeKeyGenerate);
