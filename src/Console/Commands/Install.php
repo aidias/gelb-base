@@ -65,11 +65,13 @@ class Install extends Command
     }
 
     public function installDependencies(){
-      $this->line('Installing dependencies...');
-
+      $this->line('Gelb is generating a new key.');
       Artisan::call('key:generate');
+      $this->info('Key has been generated: '.env('APP_KEY'));
 
+      $this->line('\nGelb is generating Laravel auth classes.');
       Artisan::call('make:auth');
+      $this->info('Laravel Auth is set.');
 
       // $codeKeyGenerate = Artisan::call('key:generate');
       // $this->info($codeKeyGenerate);
