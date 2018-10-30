@@ -48,13 +48,15 @@ class Install extends Command
 
     public function generateGelbInfo(){
       $this->line('');
-      $this->info('GelbFramework Platform');
+      $this->comment('GelbFramework Platform');
       $this->info('This command will install GelbFramework Blueprint for Laravel.');
       $this->line('If you accept install this GelbFramework Blueprint, the follow files will be deleted and replaced for Gelb files.');
 
       $this->table(
-        ['Files', 'Address'],
-        ['teste' => 'teste', 'teste' => 'teste']
+        ['File', 'Address'],
+        [
+          ['file'=>'arquivo1.php', 'address'=>'./app/app/app']
+        ]
       );
     }
 }
