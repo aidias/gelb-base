@@ -54,6 +54,6 @@ class Install extends Command
       $headers = ['Files', 'Address'];
       $files = ['teste' => 'teste'];
 
-      $this->table($headers, $users);
+      $this->table($headers, $files);
     }
 }
