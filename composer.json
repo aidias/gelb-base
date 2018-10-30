@@ -8,7 +8,7 @@
     "authors": [
         {
             "name": "Rafael Casachi",
-            "homepage": "https://www.rafaelcasachi.eti.br",
+            "homepage": "http://www.rafaelcasachi.eti.br",
             "email": "rcasachi@gmail.com"
         }
     ],
@@ -16,7 +16,7 @@
     "require": {
       "php": "^7.1.3"
     },
-    "auto-load": {
+    "autoload": {
       "psr-4": {
         "Aidias\\GelbBase\\": "src/"
       }
