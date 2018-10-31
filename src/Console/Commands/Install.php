@@ -69,7 +69,8 @@ class Install extends Command
       Artisan::call('key:generate');
       $this->info('Key has been generated: '.env('APP_KEY'));
 
-      $this->line('')->line('Gelb is generating Laravel auth classes.');
+      $this->line('');
+      $this->line('Gelb is generating Laravel auth classes.');
       Artisan::call('make:auth');
       $this->info('Laravel Auth is set.');
 
