@@ -4,6 +4,7 @@ namespace Aidias\GelbBase\Console\Commands;
 
 use Illuminate\Console\Command;
 use Artisan;
+use File;
 
 class Install extends Command
 {
@@ -84,14 +85,30 @@ class Install extends Command
 
       $this->line('');
       $this->line('Gelb is generating Laravel auth classes.');
-      Artisan::call('make:auth', ['--force' => default]);
+      Artisan::call('make:auth', ['--force' => true]);
       $this->info('Laravel Auth is set.');
 
-      // $codeKeyGenerate = Artisan::call('key:generate');
-      // $this->info($codeKeyGenerate);
+      $this->line('');
+      $this->line('Gelb is deleting old version of auth blade templates.');
+      $this->deleteFiles('resources/js/componentes/ExampleComponent.vue');
+      $this->deleteFiles('resources/js/app.js');
+      $this->deleteFiles('resources/js/bootstrap.js');
+      $this->deleteFiles('resources/sass/_variables.scss');
+      $this->deleteFiles('resources/sass/app.scss');
+      $this->deleteFiles('resources/views/auth/passwords/email.blade.php');
+      $this->deleteFiles('resources/views/auth/passwords/reset.blade.php');
+      $this->deleteFiles('resources/views/auth/login.blade.php');
+      $this->deleteFiles('resources/views/auth/register.blade.php');
+      $this->deleteFiles('resources/views/auth/verify.blade.php');
+      $this->deleteFiles('resources/views/layouts/app.blade.php');
+      $this->deleteFiles('resources/views/home.blade.php');
+      $this->deleteFiles('resources/views/welcome.blade.php');
+      $this->info('Old files deleted.');
 
-      // $exitCode = Artisan::call('email:send', [
-      //   'user' => 1, '--queue' => 'default'
-      // ]);
+
+    }
+
+    private function deleteFiles($file_path){
+      if(File::exists(base_path($file_path))) File::delete(base_path($file_path));
     }
 }
