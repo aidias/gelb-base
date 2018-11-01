@@ -90,7 +90,16 @@ class Install extends Command
 
       $this->line('');
       $this->line('Gelb is deleting old version of auth blade templates.');
-      $this->deleteFiles('resources/js/componentes/ExampleComponent.vue');
+      $this->deleteOldFiles();
+      $this->info('Old files deleted.');
+    }
+
+    private function deleteFiles($file_path){
+      if(File::exists(base_path($file_path))) File::delete(base_path($file_path));
+    }
+
+    private function deleteOldFiles(){
+      $this->deleteFiles('resources/js/components/ExampleComponent.vue');
       $this->deleteFiles('resources/js/app.js');
       $this->deleteFiles('resources/js/bootstrap.js');
       $this->deleteFiles('resources/sass/_variables.scss');
@@ -103,12 +112,5 @@ class Install extends Command
       $this->deleteFiles('resources/views/layouts/app.blade.php');
       $this->deleteFiles('resources/views/home.blade.php');
       $this->deleteFiles('resources/views/welcome.blade.php');
-      $this->info('Old files deleted.');
-
-
-    }
-
-    private function deleteFiles($file_path){
-      if(File::exists(base_path($file_path))) File::delete(base_path($file_path));
     }
 }
