@@ -84,7 +84,7 @@ class Install extends Command
 
       $this->line('');
       $this->line('Gelb is generating Laravel auth classes.');
-      Artisan::call('make:auth', ['--force']);
+      Artisan::call('make:auth', ['--force' => default]);
       $this->info('Laravel Auth is set.');
 
       // $codeKeyGenerate = Artisan::call('key:generate');
